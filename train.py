@@ -9,11 +9,9 @@ import torch.nn as nn
 from model.LeNet import LeNet
 import matplotlib.pyplot as plt
 import torch.utils.data as Data
+from model.AlexNet import AlexNet
 from torchvision import transforms
 from torchvision.datasets import FashionMNIST
-
-
-
 
 def train_val_process(Data_save_path,Batch_size):
     train_data = FashionMNIST(root = Data_save_path,
@@ -158,7 +156,6 @@ def train_model_process(model,train_dataloader,val_dataloader,num_epochs,lr_rate
 
 def draw_loss_acc_curve(save_path,num_epochs,train_loss_all,val_loss_all,train_acc_all,val_acc_all):
     '''绘图（train_loss、train_acc、val_loss、val_acc四条曲线画到一张图上）'''
-
     epochs = list(range(num_epochs))
     train_loss_all = train_loss_all
     val_loss_all = val_loss_all
@@ -176,13 +173,18 @@ def draw_loss_acc_curve(save_path,num_epochs,train_loss_all,val_loss_all,train_a
     plt.savefig(fname = f"{save_path}" + "acc_loss.jpg",dpi = 300,format = "jpg")
     plt.show()
 
+
+
+
+
 if __name__ == "__main__":
     init_params={
         # 用到的模型
-        "model":{
+        "model":
+        {
             "LeNet":True,
-            "VGG":False,
-            "OtherModel":False,
+            "AlexNet":False,
+            "OtherModels":False
         },
         # 性能图片存储路径
         "performance_picture_save_path":None,
