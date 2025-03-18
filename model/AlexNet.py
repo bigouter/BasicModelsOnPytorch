@@ -6,6 +6,7 @@ class AlexNet(nn.Module):
     '''AlexNet网络结构'''
     def __init__(self,input_dim,output_dim):
         super(AlexNet,self).__init__()
+        
         self.conv_1 = nn.Conv2d(in_channels = input_dim,out_channels = 96,kernel_size = 11,padding = 1,stride = 4)    # 输出 54x54x96
         self.relu_2 = nn.ReLU()
         self.pool_3 = nn.MaxPool2d(kernel_size = 3,stride = 2)                                                        # 输出 26x26x96
