@@ -8,53 +8,53 @@ class VGG19(nn.Module):
         super(VGG19,self).__init__()
 
         self.conv_1 = nn.Conv2d(input_dim,64,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_2 = nn.ReLU()                                     # 输出 224x224x64
+        self.relu_2 = nn.ReLU()                                                     # 输出 224x224x64
     
         self.conv_3 = nn.Conv2d(64,64,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_4 = nn.ReLU()                                     # 输出 224x224x64
+        self.relu_4 = nn.ReLU()                                                     # 输出 224x224x64
         
-        self.maxpool_5 = nn.MaxPool2d(kernel_size = 2,stride = 2)   # 输出112x112x64
+        self.maxpool_5 = nn.MaxPool2d(kernel_size = 2,stride = 2)                   # 输出112x112x64
 
         self.conv_6 = nn.Conv2d(64,128,kernel_size = 3,stride = 1,padding = 1)  
-        self.relu_7 = nn.ReLU()                                                 # 输出 112x112x128
+        self.relu_7 = nn.ReLU()                                                     # 输出 112x112x128
 
         self.conv_8 = nn.Conv2d(128,256,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_9 = nn.ReLU()                                                 # 输出 112x112x256
+        self.relu_9 = nn.ReLU()                                                     # 输出 112x112x256
 
-        self.maxpool_10 = nn.MaxPool2d(kernel_size = 2,stride = 2)              # 输出56x56x256
+        self.maxpool_10 = nn.MaxPool2d(kernel_size = 2,stride = 2)                  # 输出56x56x256
 
         self.conv_11 = nn.Conv2d(256,256,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_12 = nn.ReLU()                                                 # 输出56x56x256
+        self.relu_12 = nn.ReLU()                                                    # 输出56x56x256
         self.conv_13 = nn.Conv2d(256,256,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_14 = nn.ReLU()                                                 # 输出56x56x256
+        self.relu_14 = nn.ReLU()                                                    # 输出56x56x256
         self.conv_15 = nn.Conv2d(256,256,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_16 = nn.ReLU()                                                 # 输出 56x56x256
+        self.relu_16 = nn.ReLU()                                                    # 输出 56x56x256
         self.conv_17 = nn.Conv2d(256,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_18 = nn.ReLU()                                                 # 输出 56x56x512
+        self.relu_18 = nn.ReLU()                                                    # 输出 56x56x512
 
-        self.maxpool_19 = nn.MaxPool2d(kernel_size = 2,stride = 2)          # 输出  28x28x512
+        self.maxpool_19 = nn.MaxPool2d(kernel_size = 2,stride = 2)                  # 输出 28x28x512
 
         self.conv_20 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_21 = nn.ReLU()                                                 # 输出 28x28x512
+        self.relu_21 = nn.ReLU()                                                    # 输出 28x28x512
         self.conv_22 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_23 = nn.ReLU()                                                 # 输出28x28x512
+        self.relu_23 = nn.ReLU()                                                    # 输出28x28x512
         self.conv_24 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_25 = nn.ReLU()                                                 # 输出28x28x512
+        self.relu_25 = nn.ReLU()                                                    # 输出28x28x512
         self.conv_26 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_27 = nn.ReLU()                                                 # 输出28x28x512
+        self.relu_27 = nn.ReLU()                                                    # 输出28x28x512
 
-        self.maxpool_28 = nn.MaxPool2d(kernel_size = 2,stride = 2)              # 输出14x14x512
+        self.maxpool_28 = nn.MaxPool2d(kernel_size = 2,stride = 2)                  # 输出14x14x512
         
         self.conv_29 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_30 = nn.ReLU()                                                 # 输出14x14x512
+        self.relu_30 = nn.ReLU()                                                    # 输出14x14x512
         self.conv_31 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_32 = nn.ReLU()                                                 # 输出14x14x512
+        self.relu_32 = nn.ReLU()                                                    # 输出14x14x512
         self.conv_33 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_34 = nn.ReLU()                                                 # 输出14x14x512
+        self.relu_34 = nn.ReLU()                                                    # 输出14x14x512
         self.conv_35 = nn.Conv2d(512,512,kernel_size = 3,stride = 1,padding = 1)
-        self.relu_36 = nn.ReLU()                                                 # 输出14x14x512
+        self.relu_36 = nn.ReLU()                                                    # 输出14x14x512
 
-        self.maxpool_37 = nn.MaxPool2d(kernel_size = 2,stride = 2)              # 输出7x7x512
+        self.maxpool_37 = nn.MaxPool2d(kernel_size = 2,stride = 2)                  # 输出7x7x512
 
         self.flatten_38 = nn.Flatten()
         self.linear_39 = nn.Linear(7*7*512,4096)
